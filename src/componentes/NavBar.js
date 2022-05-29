@@ -94,6 +94,8 @@ const NavBar = (props) => {
         </ul>
       </div>
 
+      <span className="material-icons carrito">shopping_cart</span>
+
     </div>
   </nav>
   );
@@ -186,6 +188,8 @@ const NavBar = (props) => {
           </li>
         </ul>
       </div>
+
+      <span className="material-icons carrito">shopping_cart</span>
 
       <div className="d-flex">
         <button className="btn btn-outline-success" type="submit">
