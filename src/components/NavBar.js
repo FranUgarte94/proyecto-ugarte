@@ -1,3 +1,5 @@
+import { Link , NavLink } from "react-router-dom";
+import CartWidget from "./CartWidget";
 
 const NavBar = (props) => {
 
@@ -23,13 +25,13 @@ const NavBar = (props) => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <a to="/" className="nav-link active" aria-current="page">
+            <Link to="/" className="nav-link active" aria-current="page">
               Home
-            </a>
+            </Link>
           </li>
 
           <li className="nav-item dropdown">
-            <a
+            <Link
               to="/category"
               className="nav-link dropdown-toggle btn-primary letraBlanca"
               id="navbarDropdown"
@@ -38,40 +40,40 @@ const NavBar = (props) => {
               aria-expanded="false"
             >
               Productos
-            </a>
+            </Link>
 
             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <a to="category/Chapas" className="dropdown-item">
+                <NavLink to="category/Chapas" className="dropdown-item">
                   Chapas
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a to="category/Caños" className="dropdown-item">
+                <NavLink to="category/Caños" className="dropdown-item">
                   Caños
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a to="category/Perfiles" className="dropdown-item">
+                <NavLink to="category/Perfiles" className="dropdown-item">
                   Perfiles
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a to="category/Herrajes" className="dropdown-item">
+                <NavLink to="category/Herrajes" className="dropdown-item">
                   Herrajes
-                </a>
+                </NavLink>
               </li>
             </ul>
           </li>
 
           <li className="nav-item">
-            <a
+            <Link
               to="/sobrenosotros"
               className="nav-link active"
               aria-current="page"
             >
               Sobre Nosotros
-            </a>
+            </Link>
           </li>
 
           {/* {!footer && (
@@ -87,14 +89,13 @@ const NavBar = (props) => {
           )} */}
 
           <li className="nav-item">
-            <a to="/cart">
-              {/* <CartWidget /> */}
-            </a>
+            <Link to="/cart">
+              <CartWidget />
+            </Link>
           </li>
         </ul>
       </div>
 
-      <span className="material-icons carrito">shopping_cart</span>
 
     </div>
   </nav>
@@ -118,13 +119,13 @@ const NavBar = (props) => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <a to="/" className="nav-link active" aria-current="page">
+            <Link to="/" className="nav-link active" aria-current="page">
               Home
-            </a>
+            </Link>
           </li>
 
           <li className="nav-item dropdown">
-            <a
+            <Link
               to="/category"
               className="nav-link dropdown-toggle btn-primary letraBlanca"
               id="navbarDropdown"
@@ -133,40 +134,40 @@ const NavBar = (props) => {
               aria-expanded="false"
             >
               Productos
-            </a>
+            </Link>
 
             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <a to="category/Chapas" className="dropdown-item">
+                <NavLink to="category/Chapas" className="dropdown-item">
                   Chapas
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a to="category/Caños" className="dropdown-item">
+                <NavLink to="category/Caños" className="dropdown-item">
                   Caños
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a to="category/Perfiles" className="dropdown-item">
+                <NavLink to="category/Perfiles" className="dropdown-item">
                   Perfiles
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a to="category/Herrajes" className="dropdown-item">
+                <NavLink to="category/Herrajes" className="dropdown-item">
                   Herrajes
-                </a>
+                </NavLink>
               </li>
             </ul>
           </li>
 
           <li className="nav-item">
-            <a
+            <Link
               to="/sobrenosotros"
               className="nav-link active"
               aria-current="page"
             >
               Sobre Nosotros
-            </a>
+            </Link>
           </li>
 
           {/* {!footer && (
@@ -182,20 +183,22 @@ const NavBar = (props) => {
           )} */}
 
           <li className="nav-item">
-            <a to="/cart">
-              {/* <CartWidget /> */}
-            </a>
+            <Link to="/cart">
+              <CartWidget />
+            </Link>
           </li>
         </ul>
       </div>
 
-      <span className="material-icons carrito">shopping_cart</span>
-
       <div className="d-flex">
+        <Link to="/profile"
+                className="nav-link active"
+                aria-current="page">
         <button className="btn btn-outline-success" type="submit">
-          <p>Perfil</p>
+        <span class="material-symbols-outlined">person</span>
           <p>{props.nombre} {props.apellido}</p>
         </button>
+        </Link>
       </div>
     </div>
   </nav>
