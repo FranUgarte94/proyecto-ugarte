@@ -1,0 +1,142 @@
+@charset "UTF-8";
+/* Reseteo de padding y margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@import "~bootstrap/scss/bootstrap";
+
+html,
+body,
+#root {
+  height: 100vh;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+#root > main {
+  flex-grow: 1;
+}
+
+#root > main,
+#root > header,
+#root > footer {
+  padding: 1rem;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+.nav {
+  background-color: rgb(34, 86, 199);
+}
+
+.header {
+  background-color: rgb(15, 52, 131);
+  text-align: center;
+}
+
+.main {
+  > h1 {
+    padding-bottom: 2rem;
+  }
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+}
+
+.header__titulo {
+  color: whitesmoke;
+}
+
+.footer {
+  background-color: rgb(37, 37, 37);
+  color: whitesmoke;
+}
+
+.botonLogin {
+  color: rgb(15, 52, 131);
+}
+
+.letraBlanca {
+  color: whitesmoke !important ;
+}
+
+.botonSuma {
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+}
+
+.cantidad {
+  font-weight: bold;
+  background-color: rgb(34, 86, 199);
+  color: white;
+}
+
+.modalcss {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.2);
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
+}
+
+.cardItem {
+  padding: 1rem;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+  border-radius: 3px;
+  img {
+    width: 100%;
+  }
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.cardDetail {
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  img {
+    width: 300px;
+    margin: auto;
+  }
+}
+
+.imagenMain {
+  display: block;
+  margin: auto;
+  width: 400px;
+}
+
+.imagenDetalle {
+  width: 300px;
+}
+
+.rojo {
+  color: red;
+}
