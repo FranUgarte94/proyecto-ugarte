@@ -7,10 +7,12 @@ import { db } from "./Firebase";
 
 const Cart = () => {
   //const { precio_total, carrito, vaciarCarrito } = useContext(CartContext);
-  const { precio_total, carrito, vaciarCarrito } = useContext(contexto);
+  const { precio_total, carrito, vaciarCarrito, cantidad_total,  } = useContext(contexto);
   const [idCompra, setIdCompra] = useState("")
   //console.log({precio_total, carrito})
-  console.log(precio_total, carrito, vaciarCarrito);
+  console.log(carrito);
+
+
 
   //   const handleClick = () => {
 
@@ -79,7 +81,7 @@ const Cart = () => {
       {/* {change&&<p>esto es un texto</p>}      
       <input type="text" onChange={handleChange}></input> */}
 
-      <CarritoLista carrito={carrito} />
+      <CarritoLista carrito={carrito}/>
       <button className="botonSuma btn-primary" onClick={handleClick}>
         vaciar
       </button>

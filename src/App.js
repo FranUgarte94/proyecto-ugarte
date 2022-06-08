@@ -10,14 +10,14 @@ import MiCustomProvider from "./components/ContextoCarrito";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <MiCustomProvider>
-        <Header />
-        <Main />
-        <Footer />
-        <ToastContainer />
-      </MiCustomProvider>
-    </BrowserRouter>
+    <MiCustomProvider>
+      <BrowserRouter>
+          <Header />
+          <Main />
+          <Footer />
+          <ToastContainer />
+      </BrowserRouter>
+    </MiCustomProvider>
   );
 };
 

@@ -3,19 +3,24 @@ import { contexto } from "./ContextoCarrito";
 import { memo } from "react";
 
 const CarritoItem = ({ productos }) => {
+
+  console.log(productos.item.id)
   const { eliminarProducto } = useContext(contexto);
 
   const handleClick = () => {
-    eliminarProducto(productos.id);
+    eliminarProducto(productos.item.id);
   };
+  console.log(productos)
 
   return (
     <article className="cardItem">
       <div>
         <li>
-          <h4>{productos.nombre}</h4> <h5>$ {productos.precio}</h5>{" "}
-          <h6>Cat: {productos.categorias}</h6>
-          <button onclick={handleClick} className="botonSuma btn-primary">
+          <h4>{productos.item.nombre}</h4> <h5>$ {productos.item.precio}</h5>{" "}
+          <h6>Cantidad: {productos.contador}</h6>
+          <h6>Cat: {productos.item.categorias}</h6>
+          <h6>Id: {productos.item.id}</h6>
+          <button onClick={handleClick} className="botonSuma btn-primary">
             Eliminar Producto
           </button>
         </li>

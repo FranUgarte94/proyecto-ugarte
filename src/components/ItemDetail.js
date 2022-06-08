@@ -9,7 +9,7 @@ const ItemDetail = ({ producto }) => {
   const { agregarProducto } = useContext(contexto);
   const [verContador, setVerContador] = useState(false);
 
-  const onClick = (contador, producto) => {
+  const onClick = (contador, item, id) => {
     toast(
       ` Se han cargado ${contador} productos`,
       {
@@ -22,7 +22,7 @@ const ItemDetail = ({ producto }) => {
         progress: undefined,
       },
 
-      agregarProducto(contador, producto)
+      agregarProducto(contador, item)
     );
   };
 
@@ -86,7 +86,8 @@ const ItemDetail = ({ producto }) => {
         />
         <Link to="/cart">
           <button className="botonSuma btn-primary" onAdd={onClick}>
-            Terminar Compra
+            <p>Ir al carrito</p>
+            <span className="material-icons carrito">shopping_cart</span>
           </button>
         </Link>
       </article>

@@ -28,9 +28,14 @@ const ItemDetailContainer = () => {
     //console.log(consulta)
 
     consulta
-      .then((resultado) => {
+      .then((doc) => {
 
-        setProducto(resultado.data())
+        const productoConId = doc.data();
+
+        productoConId.id = doc.id;
+
+        console.log(productoConId)
+        setProducto(productoConId)
         setCargando(false)
         toast.dismiss();
         toast.success("Detalle de Producto Cargado");
@@ -85,7 +90,7 @@ const ItemDetailContainer = () => {
       {cargando ? (
         <BeatLoader />
       ) : (
-        <ItemDetail key={producto.id} producto={producto} />
+        <ItemDetail key={producto.id} producto={producto} id={id}/>
       )}
     </>
   );

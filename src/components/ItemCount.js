@@ -46,7 +46,7 @@ const ItemCount = ({ init, stock, onAdd, onCount, productos }) => {
           </button>
         </div>
         <button onClick={confirmar} className="botonSuma btn-primary">
-          Confirmar
+          Agregar al carrito
         </button>
       </div>
     );
@@ -69,7 +69,7 @@ const ItemCount = ({ init, stock, onAdd, onCount, productos }) => {
           </button>
         </div>
         <button onClick={confirmar} className="botonSuma btn-primary">
-          Confirmar
+        Agregar al carrito
         </button>
         <h6 className="modalcss">
           Se confirmaron {contador} unidades!

@@ -14,7 +14,7 @@ const MiCustomProvider = ({children}) => {
 
 const estaEnCarrito=(id)=>{
   // console.log(producto.cantidadporproducto)
-return carrito.find(e=>e.id==id)
+return carrito.find(e=>e.item.id===id)
 
 }
 
@@ -27,26 +27,62 @@ const agregarProducto=(contador,item)=>{
       console.log("el producto esta en el carrito")
 
   }else{
-    setCantidad_total(cantidad_total+item.cantPorProducto)
-    setPrecio_total(precio_total+item.precio)
-    setCarrito([...carrito,item])
+    setCantidad_total(cantidad_total+contador)
+    setPrecio_total(precio_total+item.precio*contador)
+    setCarrito([...carrito,{item: item, contador: contador}])
   }
+
+  /*
+const addItem = (producto, quantity) => {
+    if (isInCart(producto.id)) {
+      const newCart = [...cart];
+      for (const element of newCart) {
+        if (element.item.id === producto.id) {
+          producto.quantity = it.quantity + quantity;
+        }
+      }
+      setCart(newCart);
+    } else {
+      setCart([
+        ...cart,
+        {
+          item: producto,
+          quantity: quantity,
+        },
+      ]);
+    }
+  };
+
+  */
 
 
 }
 
-const eliminarProducto=(id)=>{
+const eliminarProducto=(id, contador)=>{
 
-  const newCart = [...carrito].filter((carri) => carri.id !== id);
-  setCarrito(newCart);
+  setCarrito(carrito.filter((carri) => carri.item.id !== id));
+  console.log("eliminado");
+  setPrecio_total((precio_total)-(contador*(carrito.find(e=>e.item.id===id).item.precio)))
 
 
-console.log("se borro el item")
+
+  // const prec = precio_total
+
+  // const precioParcial= prec-contador*carrito.find(e=>e.item.id===id).item.precio
+  // console.log(precioParcial);
+  // setPrecio_total(precioParcial);
+
+
+
+//   const newCart = [...carrito].map(element => element.id !== id);
+//   setCarrito(newCart);
+// console.log("se borro el item")
 
 }
 
 const vaciarCarrito=()=>{
   setCarrito([])
+  setPrecio_total(0)
 }
 
 

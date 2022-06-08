@@ -8,7 +8,7 @@ const CarritoLista = ({ carrito }) => {
   return (
     <ul>
       {carrito.map((producto) => {
-        return <CarritoItem key={producto.id} productos={producto} />;
+        return <CarritoItem key={producto.item.id} productos={producto} />;
       })}
     </ul>
   );
