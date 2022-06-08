@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { BeatLoader } from "react-spinners";
-import { toast } from "react-toastify";
 import { useParams } from "react-router-dom";
 import { db } from "./Firebase";
 import {
-  collection , getDoc , doc , getDocs , addDoc , query , where, orderBy
+  collection , getDocs , query , where,
 } from "firebase/firestore";
 
 
@@ -14,16 +13,13 @@ const ItemListContainer = ({ children, apellido }) => {
   const [producto, setProducto] = useState([]);
   const { nombreCategoria } = useParams();
 
-  //console.log({nombreCategoria,test})
 
   useEffect(() => {
     const productosCollection = collection(db, "productos");
     const consulta = getDocs(productosCollection);
-    //console.log(consulta)
 
     consulta
       .then((resultado) => {
-        //console.log(resultado.docs)
 
           const productos = resultado.docs.map(doc => {
 
@@ -37,7 +33,6 @@ const ItemListContainer = ({ children, apellido }) => {
         setProducto(productos);
         setCargando(false);
 
-        //console.log(productos)
       })
       .catch((error) => {
           console.log(error)

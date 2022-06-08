@@ -8,9 +8,6 @@ import {
   collection,
   getDoc,
   doc,
-  getDocs,
-  addDoc,
-  query,
 } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
@@ -34,26 +31,10 @@ const ItemDetailContainer = () => {
 
         productoConId.id = doc.id;
 
-        console.log(productoConId)
         setProducto(productoConId)
         setCargando(false)
         toast.dismiss();
         toast.success("Detalle de Producto Cargado");
-        //console.log(resultado.docs)
-
-        // const detalleProducto = productosIniciales.filter((producto) => {
-        // return producto.id == id;
-        // })[0];
-
-        // const detalleProducto = resultado.docs.filter((doc) => {
-        //   const productoConId = doc.data();
-        //   productoConId.id = doc.id;
-
-        //   return productoConId.id === id;
-        // })[0];
-
-        // setProducto(detalleProducto);
-        // setCargando(false);
 
       })
       .catch((error) => {
@@ -62,27 +43,6 @@ const ItemDetailContainer = () => {
       })
       .finally(() => {});
 
-    // //console.log("Pido detalle de un solo producto :",id)
-
-    // toast.info("Cargando detalle...");
-
-    // const detalleProducto = productosIniciales.filter((producto) => {
-    //   return producto.id == id;
-    // })[0];
-
-    // //console.log(detalleProducto)
-
-    // //console.log(producto.id)
-
-    // const pedidoDeDetalle = new Promise((res) => {
-    //   setTimeout(() => {
-    //     res(detalleProducto);
-    //   }, 2000);
-    // }).then(() => {
-    //   setCargando(false);
-    //   setProducto(detalleProducto);
-
-    // });
   }, [id]);
 
   return (
@@ -97,15 +57,3 @@ const ItemDetailContainer = () => {
 };
 
 export default ItemDetailContainer;
-
-/*
-  if (cargando) {
-    return <BeatLoader />;
-  } else {
-    return (
-      <>
-        <ItemDetail key={producto.id} producto={producto} />
-      </>
-    );
-  }
-  */

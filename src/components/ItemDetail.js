@@ -1,4 +1,4 @@
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
@@ -26,35 +26,6 @@ const ItemDetail = ({ producto }) => {
     );
   };
 
-  /*
-  const handleChange = (e) => {
-    if (e.target.value !== "") {
-      //nombre = e.target.name
-      setNombre(e.target.value);
-    }
-
-    //console.log(e.target.name)
-  };
-
-  const handleFocus = (e) => {
-    console.log("Focus");
-  };
-
-  const handleBlur = (e) => {
-    console.log("Blur");
-  };
-
-  const handleClickDefault = (e) => {
-    e.preventDefault();
-    console.log("click default");
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Submit");
-    console.log(nombre);
-  };
-*/
 
   const funcionVerContador = () => {
     setVerContador(true);
@@ -63,12 +34,6 @@ const ItemDetail = ({ producto }) => {
   if (!verContador) {
     return (
       <article className="card cardDetail">
-        {/*<form onSubmit={handleSubmit}>
-                <a href="http://google.com" onClick={handleClickDefault}>ir a Google</a>
-                <button onClick={onAdd}>click</button>
-                <input type="text" name="username" onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur}/>
-    </form>*/}
-        {/*<Hijo onClick={onAdd}/>*/}
 
         <h1>Detalle del producto</h1>
         <h3>Titulo : {producto.nombre}</h3>
@@ -95,12 +60,6 @@ const ItemDetail = ({ producto }) => {
   } else {
     return (
       <article className="card cardDetail">
-        {/*<form onSubmit={handleSubmit}>
-                <a href="http://google.com" onClick={handleClickDefault}>ir a Google</a>
-                <button onClick={onAdd}>click</button>
-                <input type="text" name="username" onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur}/>
-    </form>*/}
-        {/*<Hijo onClick={onAdd}/>*/}
 
         <h1>Detalle del producto</h1>
         <h3>Titulo : {producto.nombre}</h3>

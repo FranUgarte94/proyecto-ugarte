@@ -3,7 +3,6 @@ import CartWidget from "./CartWidget";
 
 const NavBar = (props) => {
 
-  console.log(props)
 
   if(props.footer){
 

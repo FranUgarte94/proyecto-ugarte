@@ -18,7 +18,6 @@ const ItemCount = ({ init, stock, onAdd, onCount, productos }) => {
 
   const confirmar = () => {
     onAdd(contador, productos);
-    console.log(contador);
     setConfirmado(true);
   };
 

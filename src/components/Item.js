@@ -7,9 +7,7 @@ const Item = ({ producto }) => {
       <img src={producto.imagen} alt="imagen" />
       <p>Precio : $ {producto.precio}</p>
       <p>Codigo: {producto.id}</p>
-      {/*<p>Categorias : {producto.categorias.map(categoria=>{
-        return <span>{categoria}</span>
-        })} </p>*/}
+
       <Link
         to={`/item/${producto.id}`}
         key={producto.id}

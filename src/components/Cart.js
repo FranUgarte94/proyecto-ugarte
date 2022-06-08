@@ -6,31 +6,10 @@ import {collection , addDoc}from "firebase/firestore"
 import { db } from "./Firebase";
 
 const Cart = () => {
-  //const { precio_total, carrito, vaciarCarrito } = useContext(CartContext);
-  const { precio_total, carrito, vaciarCarrito, cantidad_total,  } = useContext(contexto);
+
+  const { precio_total, carrito, vaciarCarrito } = useContext(contexto);
   const [idCompra, setIdCompra] = useState("")
-  //console.log({precio_total, carrito})
-  console.log(carrito);
 
-
-
-  //   const handleClick = () => {
-
-  //     const copia = [...cart]
-
-  //     const carritoCompra = {
-  //       id : Math.random(),
-  //       nombre : nombre
-  //       //setChange(!change)
-  //   }
-
-  //   copia.push(carritoCompra)
-
-  //   setCarritoCompra(copia)
-
-  //   console.log(copia)
-
-  // }
 
   const handleClick = () => {
     vaciarCarrito();
@@ -58,7 +37,6 @@ const Cart = () => {
   
     consulta
     .then((resultado)=>{
-      console.log(orden)
       setIdCompra(resultado.id)
     })
     .catch((err)=>{
@@ -71,15 +49,10 @@ const Cart = () => {
 
 
   return (
-    //meter render condicional, si no hay items, poner Volver a comprar
 
-    //desgloce del carrito + precio total + array de carrito de contexto
     <div>
       <h1>Carrito</h1>
       <h2>Precio total : ${precio_total}</h2>
-      {/* <button onClick={handleClick}>click</button> */}
-      {/* {change&&<p>esto es un texto</p>}      
-      <input type="text" onChange={handleChange}></input> */}
 
       <CarritoLista carrito={carrito}/>
       <button className="botonSuma btn-primary" onClick={handleClick}>

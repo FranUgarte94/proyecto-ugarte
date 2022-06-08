@@ -4,13 +4,13 @@ import { memo } from "react";
 
 const CarritoItem = ({ productos }) => {
 
-  console.log(productos.item.id)
+
   const { eliminarProducto } = useContext(contexto);
 
   const handleClick = () => {
     eliminarProducto(productos.item.id);
   };
-  console.log(productos)
+
 
   return (
     <article className="cardItem">
